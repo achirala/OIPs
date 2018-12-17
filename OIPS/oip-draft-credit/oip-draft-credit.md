@@ -15,9 +15,8 @@ created: 2018-12-06
 
 <!--"If you can't explain it simply, you don't understand it well enough."
 Provide a simplified and layman-accessible explanation of the OIP.-->
-The current OIP introduces a crediting feature that allows an organization to
-incentivize economy participants to interact within its application,
-by distributing tokens that could be spent only within the current economy.
+The current OIP introduces a Credits as a feature that allows an organization to assign tokens to its registered users to use in the economy.
+These tokens are not transferred to the organization's users, and thus, their assignment can be cancelled at any time.  
 
 ## Abstract
 
@@ -35,15 +34,15 @@ new feature. The specification should be detailed enough to allow competing,
 interoperable implementations.-->
 
 The current OIP proposes a set of contracts to enable the crediting feature by
-economy admins. The following contracts taking part in the proposed
-workflow already exists in the openst-contracts and stay unchanged with
+economy admins. The following contracts participating in the proposed
+workflow already exist in openst-contracts and remain unchanged with
 regards to the interfaces and implementations:
 
 - TokenHolder
 - TokenRules
 - UtilityBrandedToken
 
-The following contracts and a rule contract template gets introduced:
+The following contracts and a rule contract template get introduced:
 
 - CreditBudgetHolder
 - Credit
@@ -66,11 +65,11 @@ Organization Worker (address)
 
 Credit Budget Holder (contract)
 
-    A contract that keeps the organization's budget for crediting.
+    A contract that holds the organization's budget for crediting.
 
 Token Holder (contract)
 
-    Keeps user's token and execute signed by user ExTx.
+    Holds user's tokens and execute signed by user ExTx.
 
 Utility Branded Token (contract)
 
@@ -78,11 +77,11 @@ Utility Branded Token (contract)
 
 Custom Rule (contract)
 
-    A rule to execute as ExTx (signed by user).
+    A rule to execute as Executable Transactions (hereto referred to as ExTx), signed by the user. 
 
 Credit (contract)
 
-    Calculates an amount to send from budget holder contract to user.
+    Calculates an amount to send from Budget Holder contract to user.
 
 Token Rules (contract)
 
